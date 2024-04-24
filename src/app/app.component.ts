@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'firstApp';
+  constructor(private router: Router) {}
+  title = 'first application with angular';
+  counter =  0;
+  incriment(){
+    this.counter++;
+  }
+  dincriment(){
+    this.counter--;
+  }
+  redirectToHome() {
+    this.router.navigate(['/home']);
+  }
 }
